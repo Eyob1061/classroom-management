@@ -1,0 +1,86 @@
+:root {
+    --main-color: #c06c84;
+  }
+  
+  body {
+    background-color: var(--main-color);
+  }
+  body {
+    background-color: #f2f2f2; /* light gray */
+    color: #333; /* dark gray */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333; /* dark gray */
+      color: #f2f2f2; /* light gray */
+    }
+  }
+  /* Fade in animation */
+.fade-in {
+    animation: fade-in 1s;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #333;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .item {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  /* Hover effect */
+.button:hover {
+    background-color: #333;
+    color: #f2f2f2;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+  .button:hover {
+    background-color: #333;
+    color: #f2f2f2;
+  }
+  
+  .button:active {
+    background-color: #666;
+    color: #f2f2f2;
+  }
+  @media (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  .button {
+    margin: 10px 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+  }

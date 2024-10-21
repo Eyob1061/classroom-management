@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Request</title>
+  <link rel="stylesheet" href="../Home._RT/Request_meeting.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <li class="home-link"><a href="../principal/index.html"><i class="fas fa-home"></i>Home</a></li>
+  <div class="container">
+    <h1>Request Meeting </h1>
+    <form id="meeting-request-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit Request</button>
+  </div>
+  <script>
+   const form = document.getElementById('meeting-request-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const message = document.getElementById('message').value;
+
+  // Combine the date and time into a single variable
+  const datetime = `${date}T${time}`;
+
+  // Create an object with the form data
+  const requestData = {
+    name,
+    email,
+    datetime,
+    message,
+  };
+
+  // Send the meeting request to the server
+  fetch('/api/meeting-requests', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(requestData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Clear the form fields
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('time').value = '';
+        document.getElementById('message').value = '';
+
+        // Show a success message
+        alert('Your meeting request has been submitted.');
+      } else {
+        throw new Error('Failed to send meeting request.');
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert('There was an error sending your meeting request. Please try again later.');
+    });
+});
+  </script>
+</body>
+</html>

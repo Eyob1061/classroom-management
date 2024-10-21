@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grade Report</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/student/grade-report.css">
+
+</head>
+
+<body>
+    <main class="table" id="student_table">
+        <section class="table__header">
+            <a  href="/student/index.html"><i class="fa-solid fa-arrow-left"  style="font-size: 1em;"></i></a>
+
+            <h1>Grade Report</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As <img src="/Images/Icon_img/export.png"></label>
+                    <label for="export-file" id="toPDF">PDF <img src="/Images/Icon_img/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="/Images/Icon_img/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="/Images/Icon_img/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="/Images/Icon_img/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <div class="student-info">
+                <h1>Student Name : Abel Jeda</h1>
+                <h1>class: 9A</h1>
+                <h1>Student Id: 3345</h1>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>  Subject <span class="icon-arrow">&UpArrow;</span></th> 
+                        <th> Grade <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Status <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Disciplinary Note <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Biology</td>
+                        <td> 90</td>
+                        
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                       
+                        
+                    </tr>
+                    <tr>
+                        <td> Maths</td>
+                        <td> 45</td>
+                        <td> Faile </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                       
+                        
+                    </tr>
+                    <tr>
+                        <td> Physics</td>
+                        <td> 88</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                       
+                    </tr>
+                    <tr>
+                        <td> Chemistry</td>
+                        <td> 94</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                       
+                    </tr>
+                    <tr>
+                        <td> Geography</td>
+                        <td> 90</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td> English</td>
+                        <td> 93</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                     </tr>
+                     <tr>
+                        <td> Geography</td>
+                        <td> 90</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                     </tr>
+                     <tr>
+                        <td> Civic</td>
+                        <td> 85</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                     </tr>
+                     <tr>
+                        <td> Sport</td>
+                        <td> 80</td>
+                        <td> Pass </td>
+                        <td> 2/2/24</td>
+                        <td></td>
+                        
+                     </tr>
+                    
+                </tbody>
+            </table>
+        
+            <script src="../js/export_as.js"></script>
+            <script>
+                window.embeddedChatbotConfig = {
+                chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+                domain: "www.chatbase.co"
+                }
+                </script>
+                <script
+                src="https://www.chatbase.co/embed.min.js"
+                chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+                domain="www.chatbase.co"
+                defer>
+                </script>
+</body>
+
+</html>

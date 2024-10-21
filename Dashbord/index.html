@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/t.css">
+    <link rel="stylesheet" href="style.css">
+    <script slot="https:kit,fontawesome.com/a07605399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <label class="side">
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
+        <div class="sidebar">
+            <h1>MENU</h1>
+            <ul>
+                
+                <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fas fa-calendar"></i>Calendar</a></li>
+                <li><a href="#"><i class="fa-regular fa-file-pdf"></i>Report</a></li>
+                <li> <a href="#"><i class="fa-solid fa-bell"></i>Notification</a></li>
+                
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </label>
+    
+    <header class="header" style="float: right;">
+     
+      
+    </header>
+    <main  > 
+        <section class="table__header">
+            <h1>Student Attendance</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Student <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Present <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Absent <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> D-N <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Yadon Abrham</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Natan Derej </td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Abel Jeda </td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td> Aphomiya Gezaw </td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td> Ahmed Ali</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td>Naol John</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                         <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 8</td>
+                        <td>Ermiyas Derej</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 9</td>
+                        <td>Fridos Ahmed</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 10</td>
+                        <td>Leul Seged</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 14 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 11</td>
+                        <td>Dawit Abera</td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td class="attend-col"><input type="checkbox"></td>
+                        <td> 19 Mar, 2024 </td>
+                        <td>
+                            <p class="disciplinary-status"></p>
+                        </td>
+                        
+                     </tr>
+                </tbody>
+            </table>
+        
+      
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.querySelector('input[type="checkbox"]');
+            const sidebar = document.querySelector('.sidebar');
+
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    sidebar.style.transform = 'translateX(0)';
+                } else {
+                    sidebar.style.transform = 'translateX(-100%)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

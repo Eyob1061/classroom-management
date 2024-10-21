@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../Report/Tattendace.css">
+    <title>Attendance sheet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+</head>
+
+<!-- attendance.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="table" id="student_table">
+        <section class="table__header">
+            <a  href="../Home._RT/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <h1>Student Attendance</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As  <img src="../Images/Icon_img/export.png" alt=""></label>
+                    <label for="export-file" id="toPDF">PDF <img src="../Images/Icon_img/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="../Images/Icon_img/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="../Images/Icon_img/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="../Images/Icon_img/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Student <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Present <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Absent <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> D-N <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-data">
+                    <!-- Attendance data will be generated here -->
+                </tbody>
+            </table>
+        </section>
+        <div class="qr-reader-section">
+            <div id="my-qr-reader"></div>
+        </div>
+    </main>
+
+    <script>
+        const attendanceTable = document.getElementById('attendance-table');
+        const attendanceData = attendanceTable.tBodies[0];
+
+        function onScanSuccess(decodeText, decodeResult) {
+            // Take attendance logic here
+            console.log("Attendance taken for:", decodeText);
+            const studentId = decodeText;
+            const studentRow = attendanceData.rows.find(row => row.cells[0].textContent === studentId);
+            if (studentRow) {
+                const presentCheckbox = studentRow.cells[2].querySelector('input[type="checkbox"]');
+                presentCheckbox.checked = true;
+            }
+        }
+
+        let htmlScanner = new Html5QrcodeScanner(
+            "my-qr-reader",
+            {
+                fps: 10,
+                qrbos: 250
+            }
+        );
+
+        htmlScanner.render(onScanSuccess);
+    </script>
+    <script src="../Home._RT/Attendance_report.js"></script>
+</body>
+</html>
+        
+                
+</body>
+
+</html>

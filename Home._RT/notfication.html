@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="../Home._RT/Notifications.css">
+</head>
+<body>
+    <div class="notification-container">
+        <h1>Notifications</h1>
+        <ul class="notification-list">
+            <li class="notification unread">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <p>This is an unread notification.</p>
+            </li>
+            <li class="notification read">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <p>This is a read notification.</p>
+            </li>
+            <!-- Add more notifications here -->
+        </ul>
+        <button class="mark-all-as-read" onclick="markAllAsRead()">Mark all as read</button>
+    </div>
+
+    <script src="../Home._RT/Notfication.js"></script>
+</body>
+</html>

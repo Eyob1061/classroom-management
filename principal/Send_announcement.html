@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Announcement</title>
+  <link rel="stylesheet" href="../principal/Send_announcement.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <li class="home-link"><a href="../principal/index.html"><i class="fas fa-home"></i>Home</a></li>
+  <div class="container">
+    <h1>Send Announcement</h1>
+    <form id="announcement-form">
+      <label for="recipients">Recipients:</label>
+      <select id="recipients" name="recipients" multiple required>
+        <option value="teachers">Teachers</option>
+        <option value="students">Students</option>
+        <option value="parents">Parents</option>
+      </select>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Announcement</button>
+    </form>
+  </div>
+  <script>const form = document.getElementById('announcement-form');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+    
+      const recipients = document.getElementById('recipients').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+    
+      if (!recipients || !subject || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+    
+      // Send the announcement to the server
+      // You can replace this with your own implementation to send the data to the server
+      console.log(`Sending announcement to ${recipients}:
+    Subject: ${subject}
+    Message: ${message}
+    `);
+    
+      // Clear the form fields
+      document.getElementById('recipients').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+    
+      // Show a success message
+      alert('Announcement sent successfully!');
+    });</script>
+</body>
+</html>

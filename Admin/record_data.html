@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Admin/record_data.css">
+   
+    <script slot="https:kit,fontawesome.com/a07605399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Data Recording Page</title>
+ 
+</head>
+<body>
+    <li class="home-link"><a href="../Admin/index.html"><i class="fas fa-home"></i>Home</a></li>
+    <div class="container">
+        <h1>Data Recording Page</h1>
+        <form id="data-form">
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="parent">Parent</option>
+            </select>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <button type="submit">Submit Data</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('data-form');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const type = document.getElementById('type').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Create an object with the form data
+            const data = {
+                type,
+                name,
+                email,
+                phone,
+            };
+
+            // Send the data to the server
+            fetch('/api/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        // Clear the form fields
+                        document.getElementById('type').value = '';
+                        document.getElementById('name').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('phone').value = '';
+
+                        // Show a success message
+                        alert('Your data has been recorded.');
+                    } else {
+                        throw new Error('Failed to record data.');
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                    alert('There was an error recording your data. Please try again later.');
+                });
+        });
+    </script>
+</body>
+</html>

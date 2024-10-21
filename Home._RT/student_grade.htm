@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../Report/Tattendace.css">
+    <link rel="stylesheet" href="../Report/Student_list.css">
+    <title>Student list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        #rank-generator {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #rank-generator:hover {
+            background-color: #0056b3;
+        }
+
+        #total-marks-calculator, #average-marks-calculator {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+
+        #total-marks-calculator:hover, #average-marks-calculator:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="table" id="student_table">
+        <!-- <label for="account-type">Class:</label> -->
+        <select id="class" name="class">
+            <option selected class="selected">Class</option>
+            <option value="class">9</option>
+            <option value="class">10</option>
+            <option value="class">11</option>
+            <option value="class">12</option>
+        </select>
+        <select id="section" name="class">
+            <option selected class="selected">Section</option>
+            <option value="class">A</option>
+            <option value="class">B</option>
+            <option value="class">C</option>
+            <option value="class">D</option>
+        </select>
+        <section class="table__header">
+            <a href="../Home._RT/"><i class="fa-solid fa-arrow-left"></i></a>
+            <h1>Mark list</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As  <img src="../Images/Icon_img/export.png" alt=""></label>
+                    <label for="export-file" id="toPDF">PDF <img src="../Images/Icon_img/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="../Images/Icon_img/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="../Images/Icon_img/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="../Images/Icon_img/excel.png" alt=""></label>
+                </div>
+            </div>
+           
+            <button id="total-marks-calculator" class="btn btn-primary">Calculate Total Marks</button>
+            <button id="average-marks-calculator" class="btn btn-primary">Calculate Average Marks</button>
+            <button id="rank-generator" class="btn btn-primary">Generate Ranks</button>       
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id </th>
+                        <th> Name</th>
+                        <th> Class </th>
+                        <th> Section </th>
+                        <th> Subject 1 </th>
+                        <th> Mark 1 </th>
+                        <th> Subject 2 </th>
+                        <th> Mark 2 </th>
+                        <th> Subject 3 </th>
+                        <th> Mark 3 </th>
+                        <th> Subject 4 </th>
+                        <th> Mark 4 </th>
+                        <th> Subject 5 </th>
+                        <th> Mark 5 </th>
+                        <th> Total Marks </th>
+                        <th> Average Mark </th>
+                        <th> Rank </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Yadon Abrham</td>
+                        <td> 9</td>
+                        <td> A</td>
+                        <td> English</td>
+                        <td> 80</td>
+                        <td> Maths</td>
+                        <td> 90</td>
+                        <td> Science</td>
+                        <td> 50</td>
+                        <td> Social</td>
+                        <td> 88</td>
+                        <td> Geography</td>
+                        <td> 92</td>
+                        <td id="totalMarks1"> </td>
+                        <td id="averageMark1"> </td>
+                        <td id="rank1"> </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Natan Derej </td>
+                        <td> 9 </td>
+                        <td> A </td>
+                        <td> English</td>
+                        <td> 80</td>
+                        <td> Maths</td>
+                        <td> 85</td>
+                        <td> Science</td>
+                        <td> 60</td>
+                        <td> Social</td>
+                        <td> 82</td>
+                        <td> Geography</td>
+                        <td> 95</td>
+                        <td id="totalMarks2"> </td>
+                        <td id="averageMark2"> </td>
+                        <td id="rank2"> </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Abel Jeda </td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 88</td>
+                        <td> Maths</td>
+                        <td> 82</td>
+                        <td> Science</td>
+                        <td> 85</td>
+                        <td> Social</td>
+                        <td> 86</td>
+                        <td> Geography</td>
+                        <td> 89</td>
+                        <td id="totalMarks3"> </td>
+                        <td id="averageMark3"> </td>
+                        <td id="rank3"> </td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td> Aphomiya Gezaw </td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 75</td>
+                        <td> Maths</td>
+                        <td> 80</td>
+                        <td> Science</td>
+                        <td> 65</td>
+                        <td> Social</td>
+                        <td> 90</td>
+                        <td> Geography</td>
+                        <td> 88</td>
+                        <td id="totalMarks4"></td>
+                        <td id="averageMark4"> </td>
+                        <td id="rank4"> </td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td> Ahmed Ali</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 90</td>
+                        <td> Maths</td>
+                        <td> 75</td>
+                        <td> Science</td>
+                        <td> 80</td>
+                        <td> Social</td>
+                        <td>85</td>
+                        <td> Geography</td>
+                        <td> 92</td>
+                        <td id="totalMarks5"> </td>
+                        <td id="averageMark5"> </td>
+                        <td id="rank5"> </td>
+                    </tr>
+                    <tr>
+                        <td> 6</td>
+                        <td> Naol John</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 85</td>
+                        <td> Maths</td>
+                        <td> 80</td>
+                        <td> Science</td>
+                        <td> 80</td>
+                        <td> Social</td>
+                        <td> 85</td>
+                        <td> Geography</td>
+                        <td> 95</td>
+                        <td id="totalMarks6"> </td>
+                        <td id="averageMark6"> </td>
+                        <td id="rank6"> </td>
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td> Ermiyas Derej</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 80</td>
+                        <td> Maths</td>
+                        <td> 85</td>
+                        <td> Science</td>
+                        <td> 90</td>
+                        <td> Social</td>
+                        <td> 75</td>
+                        <td> Geography</td>
+                        <td> 92</td>
+                        <td id="totalMarks7"> </td>
+                        <td id="averageMark7"> </td>
+                        <td id="rank7"> </td>
+                    </tr>
+                    <tr>
+                        <td> 8</td>
+                        <td> Fridos Ahmed</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 85</td>
+                        <td> Maths</td>
+                        <td> 90</td>
+                        <td> Science</td>
+                        <td> 80</td>
+                        <td> Social</td>
+                        <td> 75</td>
+                        <td> Geography</td>
+                        <td> 95</td>
+                        <td id="totalMarks8"> </td>
+                        <td id="averageMark8"> </td>
+                        <td id="rank8"> </td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td> Leul Seged</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        <td> English</td>
+                        <td> 70</td>
+                        <td> Maths</td>
+                        <td> 85</td>
+                        <td> Science</td>
+                        <td> 90</td>
+                        <td> Social</td>
+                        <td> 85</td>
+                        <td> Geography</td>
+                        <td> 92</td>
+                        <td id="totalMarks9"> </td>
+                        <td id="averageMark9"> </td>
+                        <td id="rank9"> </td>
+                    </tr>
+                    <tr>
+                        <td> 10</td>
+                        <td> Niset Gebregizghi</td>
+                        <td>9 </td>
+                        <td>A</td><td> English</td>
+                        <td> 85</td>
+                        <td> Maths</td>
+                        <td> 90</td>
+                        <td> Science</td>
+                        <td> 80</td>
+                        <td> Social</td>
+                        <td> 65</td>
+                        <td> Geography</td>
+                        <td> 95</td>
+                        <td id="totalMarks10"> </td>
+                        <td id="averageMark10"> </td>
+                        <td id="rank10"> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <button class="btn btn-primary" onclick="updateStudentData()"> Update</button> -->
+        </div>
+    </div>
+    <script src="../Home._RT/student_grade.js"></script>
+    <script src="../js/export_as.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+</body>
+</html>

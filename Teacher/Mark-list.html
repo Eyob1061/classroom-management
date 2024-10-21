@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../Report/Tattendace.css">
+    <link rel="stylesheet" href="../Report/Student_list.css">
+    <link rel="stylesheet" href="../styles/Mark-list.css">
+    <title>Student list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+</head>
+
+<body>
+    <main class="table" id="student_table">
+                        <!-- <label for="account-type">Class:</label> -->
+                        <select id="class" name="class">
+                            <option selected class="selected">Class</option>
+                            <option value="class">9</option>
+                            <option value="class">10</option>
+                            <option value="class">11</option>
+                            <option value="class">12</option>
+                          </select>
+                          <select id="section" name="class">
+                            <option selected class="selected">Section</option>
+                            <option value="class">A</option>
+                            <option value="class">B</option>
+                            <option value="class">C</option>
+                            <option value="class">D</option>
+                          </select>
+                          
+                          
+                          
+                          
+    
+                          <section class="table__header">
+                            <a href="../Teacher/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                            <h1>Mark list</h1>
+                            <div class="input-group">
+                              <input type="search" placeholder="Search Data...">
+                              <img src="images/search.png" alt="">
+                            </div>
+                            <div class="export__file">
+                              <label for="export-file" class="export__file-btn" title="Export File"></label>
+                              <input type="checkbox" id="export-file">
+                              <div class="export__file-options">
+                                <label>Export As  <img src="../Images/Icon\_img/export.png" alt=""></label>
+                                <label for="export-file" id="toPDF">PDF <img src="../Images/Icon\_img/pdf.png" alt=""></label>
+                                <label for="export-file" id="toJSON">JSON <img src="../Images/Icon\_img/json.png" alt=""></label>
+                                <label for="export-file" id="toCSV">CSV <img src="../Images/Icon\_img/csv.png" alt=""></label>
+                                <label for="export-file" id="toEXCEL">EXCEL <img src="../Images/Icon\_img/excel.png" alt=""></label>
+                              </div>
+                            </div>
+                          </section>
+                          
+                          <section class="table__body">
+                            <body>
+                              <center>
+                                <table border="1" cellspacing="5" bgcolor="white">
+                                  <caption><b>Enter Marks</b></caption>
+                                  <tr>
+                                    <th rowspan="2"> Student Name</th>
+                                    <th colspan="4">Marks</th>
+                                  </tr>
+                                  <tr>
+                                    <th>Subject</th>
+                                    
+                                    <th>Mid</th>
+                                    <th>Assignment</th>
+                                    <th>Class activity</th>
+                                    <th>Final</th>
+                                    <th>Conduct</th>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="text" id="name"></td>
+                                    <td>
+                                      <select id="subject">
+                                        <option value="english">English</option>
+                                        <option value="maths">Maths</option>
+                                        <option value="science">Science</option>
+                                        <option value="social">Biology</option>
+                                      </select>
+                                    </td>
+                                    <td><input type="text" id="mid"></td>
+                                    <td><input type="text" id="assignment"></td>
+                                    <td><input type="text" id="activity"></td>
+                                    <td><input type="text" id="final"></td>
+                                    <td><input type="text" id="conduct"></td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="5" height="30">
+                                      <input type="submit" value="Calculate" onclick="Sub()">
+                                    </th>
+                                  </tr>
+                                </table>
+                                <br>
+                                <table  id="TableScore">
+                                  <caption><b>Student Data</b></caption>
+                                  <tr>
+                                    <th >  Student Name</th>
+                                    <th >Total</th>
+                                    <!-- <th>Average</th> -->
+                                    <th>Conduct</th>
+                                    <th>Subject</th>
+                                    
+                                  </tr>
+                                </table>
+                                <br>
+                                <input type="submit" value="Submit Grades" id="submit-grades" onclick="submitGrades()">
+                                <p id="error-message" style="color:red;"></p>
+                              </center>
+                            </body>
+                          </section>
+                          <script>
+                            function Sub() {
+                                var n, k, r, e, v, sum, con;
+                                n = (document.getElementById('name').value);
+                                var subject = document.getElementById('subject').value;
+                                var mid = parseFloat(document.getElementById('mid').value);
+                                var assignment = parseFloat(document.getElementById('assignment').value);
+                                var activity = parseFloat(document.getElementById('activity').value);
+                                var final = parseFloat(document.getElementById('final').value);
+                                var conduct = (document.getElementById('conduct').value);
+                    
+                                if (n === "") {
+                                    document.getElementById("error-message").innerHTML = "Please enter a student name.";
+                                    return;
+                                }
+                    
+                                if (isNaN(mid)) {
+                                    document.getElementById("error-message").innerHTML = "Please enter a valid value for Mid.";
+                                    return;
+                                }
+                    
+                                if (isNaN(assignment)) {
+                                    document.getElementById("error-message").innerHTML = "Please enter a valid value for Assignment.";
+                                    return;
+                                }
+                    
+                                if (isNaN(activity)) {
+                                    document.getElementById("error-message").innerHTML = "Please enter a valid value for Class activity.";
+                                    return;
+                                }if (isNaN(final)) {
+                                    document.getElementById("error-message").innerHTML = "Please enter a valid value for Final.";
+                                    return;
+                                }
+                    
+                                // if (isNaN(conduct)) {
+                                //     document.getElementById("error-message").innerHTML = "Please enter a valid value for Conduct.";
+                                //     return;
+                                // }
+                    
+                                sum = mid + assignment + activity + final;
+                                document.getElementById("error-message").innerHTML = "";
+                    
+                                // Displaying the Student Data
+                                var newTable = document.getElementById('TableScore');
+                                var row = newTable.insertRow(-1);
+                                var cell1 = row.insertCell(0);
+                                var cell2 = row.insertCell(0);
+                                var cell3 = row.insertCell(0);
+                                var cell4 = row.insertCell(0);
+                                cell4.innerHTML = n;
+                                cell3.innerHTML = sum;
+                                cell2.innerHTML = conduct;
+                                cell1.innerHTML = subject;
+                            }
+                    
+                            function submitGrades() {
+                                // Add your code here to submit the calculated grades
+                                
+                                alert("Grades submitted successfully!");
+                            }
+                          </script>  
+                          <script>
+                            window.embeddedChatbotConfig = {
+                            chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+                            domain: "www.chatbase.co"
+                            }
+                            </script>
+                            <script
+                            src="https://www.chatbase.co/embed.min.js"
+                            chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+                            domain="www.chatbase.co"
+                            defer>
+                            </script> 
+</body>
+
+</html>

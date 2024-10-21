@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/Dashbord/style.css">
+    <link rel="stylesheet" href="Sattendance.css">
+
+    <title>Attendance sheet</title>
+    
+</head>
+
+<body>
+    <main class="table" id="student_table">
+        <section class="table__header">
+            <a  href="index.html"><i class="fa-solid fa-arrow-left"  style="font-size: 1em;"></i></a>
+
+            <h1>Attendance Report</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <div class="student-info">
+                <h1>Student Name : Abel Jeda</h1>
+                <h1>class: 9A</h1>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>  Date <span class="icon-arrow">&UpArrow;</span></th>    
+                        <th>Status <span class="icon-arrow">&UpArrow;</span></th>    
+                        <th> Disciplinary Note <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1/3/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                       
+                        
+                    </tr>
+                    <tr>
+                        <td> 1/4/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                       
+                        
+                    </tr>
+                    <tr>
+                        <td> 1/5/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                        
+                       
+                    </tr>
+                    <tr>
+                        <td> 1/6/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                       
+                    </tr>
+                    <tr>
+                        <td> 1/7/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 1/8/2024</td>
+                        <td> Absent</td>  
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 1/9/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 1/10/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 1/11/2024</td>
+                        <td> Present</td>  
+                        <td></td>
+                        
+                     </tr>
+                    
+                </tbody>
+            </table>
+        
+      <script src="../js/export_as.js"></script>          
+</body>
+
+</html>

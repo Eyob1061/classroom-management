@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/Dashbord/style.css">
+    <link rel="stylesheet" href="/student/style.css">
+    <script slot="https:kit,fontawesome.com/a07605399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../principal/assignsTeacher.css">
+    <title>Report</title>
+
+</head>
+<body>
+    <label class="side">
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
+        <div class="sidebar">
+            <h1>Principal</h1>
+            <ul>
+                <li><a href="../principal/index.html"><i class="fas fa-home"></i>Home</a></li>
+                
+               
+                <!-- <li><a href="#"><i class="fa-regular fa-file-pdf"></i>Report</a></li> -->
+                <li><a href="#"><i class="fa-solid fa-bell"></i>Notification</a></li>
+                <li><a href="#"><i class="fa-solid fa-person-chalkboard"></i>Teacers</a></li>
+                <li><a href="#"><i class="fa-solid fa-graduation-cap"></i>Students</a></li>
+                <li><a href="../Calendar-master/index.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+                <li><a href="../Home._RT/student_grade.htm"><i class="fa-solid fa-list-ol"></i>Mark List</a></li>
+                <li><a href="../Teacher/Tprofile.html"><i class="fa-solid fa-id-card"></i>Profile</a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </label>
+<header class="header" style="float: right;">
+     
+      
+    </header>
+    <main class="main" > 
+      <div class="search-wrapper" >
+       
+        <input type="search" placeholder="Search">
+        <button class="search-btn"  >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        
+      </div>
+     <div class="content">
+      
+        <div class="container">
+            
+
+            <h2>Assign Student to Class</h2>
+            <form>
+                <label for="student">Select Student:</label>
+                <select id="student">
+                    <option value="Abebe">Abebe</option>
+                    <option value="abel">Abel</option>
+                    <option value="Berket">Berket</option>
+                </select>
+            
+                <label for="class">Select Class:</label>
+                <select id="class">
+                    <option value="9A">Class 9A</option>
+                    <option value="9B">Class 9B</option>
+                    <option value="9C">Class 9C</option>
+                    <option value="10A">Class 10A</option>
+                    <option value="10B">Class 10B</option>
+                    <option value="10C">Class 10C</option>
+                    <option value="11A">Class 11A</option>
+                    <option value="11B">Class 11B</option>
+                    <option value="11C">Class 11C</option>
+                    <option value="12A">Class 12A</option>
+                    <option value="12B">Class 12B</option>
+                    <option value="12C">Class 12C</option>
+                </select>
+            
+                <button type="button" onclick="assignStudent()">Assign student</button>
+            </form>
+            
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.querySelector('input[type="checkbox"]');
+            const sidebar = document.querySelector('.sidebar');
+
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    sidebar.style.transform = 'translateX(0)';
+                } else {
+                    sidebar.style.transform = 'translateX(-100%)';
+                }
+            });
+        });
+        function assignStudent() {
+            const student = document.getElementById("student");
+            const selectedStudent = student.options[student.selectedIndex].value;
+
+            const className = document.getElementById("class");
+            const selectedClassName = className.options[className.selectedIndex].value;
+
+            const result = document.getElementById("result");
+            result.innerHTML = `<p>${selectedStudent} has been assigned to ${selectedClassName}.</p>`;
+            }
+      
+    </script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+
+</body>
+</html>

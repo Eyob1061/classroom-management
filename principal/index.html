@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="/Dashbord/style.css">
+    <link rel="stylesheet" href="/student/style.css">
+    <script slot="https:kit,fontawesome.com/a07605399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <label class="side">
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
+        <div class="sidebar">
+            <h1></h1>
+            <ul>
+
+                  
+                <!-- <li><a href="/home-page.html"><i class="fas fa-home"></i>Home</a></li> -->
+                <li ><a href="../Teacher/Tprofile.html"><i class="fas fa-user"></i>Profile</a></li>
+
+                <!-- <li ><a href="#"><i class="fa-regular fa-file-pdf"></i>Report</a></li> -->
+                <li> <a href="#"><i class="fa-solid fa-bell"></i>Notification</a></li>
+                <li><a href="../principal/assignsTeacher.html"><i class="fa-solid fa-person-chalkboard"></i>Teacers</a></li>
+                <li><a href="../principal/assignstudent.html"><i class="fa-solid fa-person-chalkboard"></i>Student</a></li>
+                <li> <a href="../Calendar-master/index.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+                <li> <a href="../Home._RT/student_grade.htm"><i class="fa-solid fa-list-ol"></i>Mark List</a></li> 
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </label>
+    
+    <header class="header" style="float: right;">
+     
+      
+    </header>
+    <main class="main" > 
+      <div class="search-wrapper" >
+       
+        <input type="search" placeholder="Search">
+        <button class="search-btn"  >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        
+      </div>
+     <div class="content">
+        
+        <div class="wrapper">
+            <div class="content-wrapper">
+                
+                
+                <i class="fa-solid fa-barcode"></i>
+                <button class="btn"><a href="../Teacher/Tattendace.html"> Attendance List</a></button>
+            </div>
+        </div>
+        <div class="wrapper-2">
+            <div class="content-wrapper">
+                
+                <i class="fa-solid fa-user-graduate"></i>
+                <button class="btn"><a href="../Teacher/Student-list.html">Student list </a></button>
+            </div>
+        </div>
+        
+    </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.querySelector('input[type="checkbox"]');
+            const sidebar = document.querySelector('.sidebar');
+
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    sidebar.style.transform = 'translateX(0)';
+                } else {
+                    sidebar.style.transform = 'translateX(-100%)';
+                }
+            });
+        });
+    </script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+</body>
+</html>

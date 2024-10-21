@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Login For Html Css</title>
+
+</head>
+<body>
+    <div class="login-form">
+        <h1></h1>
+        <div class="container">
+            <div class="main">
+                <div class="content">
+                    <a  id="arrow" href="/home-page.html"><i class="fa-solid fa-arrow-left"></i></a>
+                    <h2>Log In</h2>
+                    <form id="login-form">
+                       
+                        <label for="account-type">Account Type:</label>
+                        <select id="account-type" name="account-type">
+                          <option value="homeroom-teacher">Homeroom Teacher</option>
+                          <option value="parent">Parent</option>
+                          <option value="student">Student</option>
+                          <option value="principal">Principal</option>
+                          <option value="teacher">Teacher</option>
+                          <option value="records-manager">Records Manager</option>
+                        </select>
+                        <br>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <button type="submit">Login</button>
+                      </form>
+                    <p class="account"> Insert your username and password</p>
+                     
+                </div>
+                <div class="form-img">
+                    <img src="Images/background/login-bg.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Select the login form and form elements
+const loginForm = document.getElementById('login-form');
+const accountTypeSelect = document.getElementById('account-type');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+
+// Add event listener to the login form
+loginForm.addEventListener('submit', (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Validate the form inputs
+  if (validateForm()) {
+    // If the form is valid, submit the form data
+    submitForm();
+  }
+});
+
+// Function to validate the form inputs
+function validateForm() {
+  // Reset the error messages
+  resetErrorMessages();
+
+  // Check if the account type is selected
+  if (accountTypeSelect.value === '') {
+    showErrorMessage('account-type', 'Please select an account type.');
+    return false;
+  }
+
+  // Check if the username is empty
+  if (usernameInput.value.trim() === '') {
+    showErrorMessage('username', 'Please enter a username.');
+    return false;
+  }
+
+  // Check if the password is empty
+  if (passwordInput.value.trim() === '') {
+    showErrorMessage('password', 'Please enter a password.');
+    return false;
+  }
+
+  // If all inputs are valid, return true
+  return true;
+}
+
+// Function to submit the form data
+function submitForm() {
+  // Get the form data
+  const formData = new FormData(loginForm);
+
+  // Send the form data to the server using AJAX or Fetch API
+  
+  fetch('/api/login', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle the response from the server
+    if (data.success) {
+      // If the login is successful, redirect to the home page
+      window.location.href = '/home-page.html';
+    } else {
+      // If the login is unsuccessful, show an error message
+      showErrorMessage('password', data.message);
+    }
+  })
+  .catch(error => {
+    // Handle any errors that occur during the request
+    console.error(error);
+    showErrorMessage('password', 'An error occurred while logging in.');
+  });
+}
+
+// Function to reset the error messages
+function resetErrorMessages() {
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(message => message.remove());
+}
+
+// Function to show an error message
+function showErrorMessage(inputId, message) {
+  // Create a new error message element
+  const errorMessage = document.createElement('div');
+  errorMessage.classList.add('error-message');
+  errorMessage.innerText = message;
+
+  // Add the error message to the input element
+  const inputElement = document.getElementById(inputId);
+  inputElement.parentElement.insertBefore(errorMessage, inputElement.nextSibling);
+}
+    </script>
+    <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "EUiaIYjUsLwLtWzMcjrdm",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="EUiaIYjUsLwLtWzMcjrdm"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#class{
+    position: relative;
+   
+    width: 305px;
+    padding: 0px 0px;
+    font-family:  'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    border: 6px solid white;
+   
+    border-radius:5px ;
+    
+    background-position: 247px 0;
+    transition: 0.5s;
+}
+
+select::-ms-expand{
+    display: none;
+}
+select:hover{
+    border: 1px solid blue;
+}
+
+#section{
+    position: relative;
+    
+   
+    width: 305px;
+    padding: 0px 0px;
+    font-family:  'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    border: 6px solid white;
+   
+
+}

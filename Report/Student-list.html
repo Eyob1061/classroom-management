@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../Report/Tattendace.css">
+    <link rel="stylesheet" href="../Report/Student_list.css">
+    <title>Student list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+</head>
+
+<body>
+    <main class="table" id="student_table">
+                        <!-- <label for="account-type">Class:</label> -->
+                        <select id="class" name="class">
+                          <option selected class="selected">Class</option>
+                          <option value="class">9</option>
+                          <option value="class">10</option>
+                          <option value="class">11</option>
+                          <option value="class">12</option>
+                          
+                        </select>
+                        <select id="section" name="class">
+                            <option selected class="selected">Section</option>
+                            <option value="class">A</option>
+                            <option value="class">B</option>
+                            <option value="class">C</option>
+                            <option value="class">D</option>
+                            
+                          </select>
+         <section class="table__header">
+            <a  href="/student/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <h1>Student List</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As  <img src="../Images/Icon_img/export.png" alt=""></label>
+                    <label for="export-file" id="toPDF">PDF <img src="../Images/Icon_img/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="../Images/Icon_img/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="../Images/Icon_img/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="../Images/Icon_img/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Name<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> class <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Section <span class="icon-arrow">&UpArrow;</span></th>
+                        
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Yadon Abrham</td>
+                        <td> 9</td> 
+                        <td> A</td>
+                        
+                        
+                        
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Natan Derej </td>
+                        <td> 9 </td>
+                        <td> A </td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Abel Jeda </td>
+                        <td>9 </td>
+                        <td>A</td>
+                       
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td> Aphomiya Gezaw </td>
+                        <td>9 </td>
+                        <td>A</td>  
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td> Ahmed Ali</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td>Naol John</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 8</td>
+                        <td>Ermiyas Derej</td>
+                        <td>9 </td>
+                        <td>A</td>
+                     </tr>
+                     <tr>
+                        <td> 9</td>
+                        <td>Fridos Ahmed</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        
+                     </tr>
+                     <tr>
+                        <td> 10</td>
+                        <td>Leul Seged</td>
+                        <td>9 </td>
+                        <td>A</td>
+                     </tr>
+                     <tr>
+                        <td> 11</td>
+                        <td>Dawit Abera</td>
+                        <td>9 </td>
+                        <td>A</td>
+                        
+                     </tr>
+                </tbody>
+            </table>
+        
+       <script src="../js/export_as.js"></script>         
+</body>
+
+</html>
